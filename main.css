@@ -1,0 +1,503 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", serif;
+    color: #fff;
+}
+
+body {
+    background-color: rgb(7, 7, 7);
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    padding: 16px;
+    position: static; /* Altera para static, removendo a fixação */
+    z-index: 1000; /* Mantém o z-index, mas não é necessário para cabeçalho não fixo */
+}
+
+header .container {
+    padding: 5px 20px;
+    border-radius: 15px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(15, 15, 15);
+    position: relative; /* Mantém a estrutura do menu */
+}
+
+.logo {
+    width: 50px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li, li a {
+    text-decoration: none;
+    padding: 0 3px;
+    color: rgb(255, 220, 50);
+    transition: color 0.3s;
+}
+
+.menu li a:hover {
+    color: #fff;
+}
+
+.btn-download {
+    display: inline-block;
+    padding: 8px 16px;
+    background: linear-gradient(45deg, rgb(255, 220, 50), rgb(255, 200, 0));
+    color: rgb(15, 15, 15);
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.btn-download:hover {
+    background: linear-gradient(45deg, rgb(255, 200, 0), rgb(255, 180, 0));
+    transform: translateY(-3px);
+}
+
+.btn-download:focus {
+    outline: none;
+}
+
+/* Estilo do ícone de menu hambúrguer */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    color: rgb(255, 220, 50);
+    cursor: pointer;
+}
+
+/* Estilo para telas menores */
+@media (max-width: 768px) {
+    .menu {
+        display: none; /* Esconde o menu */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Ajuste conforme o tamanho do cabeçalho */
+        right: 0;
+        background-color: rgb(15, 15, 15);
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block; /* Mostra o ícone do menu hambúrguer */
+    }
+
+    .menu.show {
+        display: flex; /* Exibe o menu ao clicar no hambúrguer */
+    }
+}
+
+.apresentacao {
+    max-width: 1024px;
+    width: 100%;
+    margin: 16px auto;
+    padding: 16px 8px;
+    border-radius: 15px;
+    background-color: rgb(15, 15, 15);
+    display: flex; /* Torna o container flexível */
+    flex-direction: row; /* Alinha os elementos na horizontal */
+    justify-content: space-between; /* Espaça os elementos para as extremidades */
+    align-items: center; /* Alinha os elementos verticalmente ao centro */
+    gap: 16px; /* Espaçamento consistente entre os elementos */
+}
+
+.apresentacao div:first-child {
+    flex: 1; /* O conteúdo textual ocupa o espaço restante */
+}
+
+.apresentacao div {
+    padding: 0 16px;
+    padding-bottom: 16px;
+}
+
+.apresentacao p {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 25px;
+    padding-bottom: 32px;
+}
+
+.apresentacao h1 {
+    color: rgb(255, 220, 50);
+    font-size: 50px;
+}
+
+.apresentacao h4{
+    font-size: 30px;
+    padding-bottom: 32px;
+}
+
+.apresentacao a {
+    align-items: normal;
+}
+
+
+.imagem {
+    display: flex;
+    justify-content: space-between; /* Garante que a imagem fique à direita */
+    align-items: center;
+}
+
+.perfil-imagem {
+    width: 200px; /* Tamanho do círculo */
+    height: 200px;
+    border-radius: 60%; /* Círculo */
+    object-fit: cover; /* Mantém a proporção da imagem */
+    object-position: 100% 25%; /* Move o foco para a parte inferior da imagem */
+    border: 2px solid #ccc; /* Borda opcional */
+    transform: scaleX(-1); /* Espelha horizontalmente */
+}
+
+.sobre {
+    max-width: 1024px;
+    margin: 0 auto; 
+    width: 100%;
+    margin: 32px auto; /* Espaçamento externo da seção */
+    padding: 16px;
+    background-color: rgb(15, 15, 15);
+    color: white;
+    border-radius: 15px;
+}
+
+.sobre .container {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Alinha elementos verticalmente */
+    align-items: flex-start; /* Garante o alinhamento à esquerda */
+    gap: 16px; /* Espaçamento uniforme entre os elementos */
+}
+
+.sobre h4 {
+    font-size: 20px;
+    color: rgb(255, 220, 50);
+    margin: 0; /* Remove margens automáticas */
+}
+
+.sobre h2 {
+    font-size: 30px;
+    color: white;
+    margin: 0; /* Remove margens automáticas */
+}
+
+.sobre p {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 25px;
+    line-height: 1.6; /* Espaçamento entre linhas para legibilidade */
+    margin: 0; /* Remove margens automáticas */
+}
+
+
+.skills {
+    max-width: 1024px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 32px 16px;
+    background-color: rgb(15, 15, 15);
+    color: white;
+    text-align: center; /* Garante que o título esteja centralizado */
+    border-radius: 15px;
+
+}
+
+.skills h4 {
+    margin-bottom: 20px; /* Espaço abaixo do título */
+    font-size: 24px; /* Tamanho da fonte do título */
+    font-weight: bold; /* Deixa o título em negrito */
+    color: rgb(255, 220, 50);
+    padding-bottom: 32px;
+}
+
+.skills-list {
+    display: flex;
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    flex-wrap: wrap;
+    gap: 20px; /* Espaçamento entre os itens */
+    list-style-type: none; /* Remove os pontos da lista */
+    padding: 0; /* Remove o padding default das listas */
+    margin: 0 auto; /* Centraliza a lista no contêiner */
+    width: 80%; /* Opcional: ajusta a largura da lista para manter uma margem ao redor */
+}
+
+.skill-item {
+    width: 100px;
+    text-align: center; /* Garante que os nomes das tecnologias fiquem centralizados abaixo das logos */
+}
+
+.skill-logo {
+    width: 60px; /* Tamanho das logos */
+    height: 60px;
+    margin-bottom: 10px; /* Espaço entre a logo e o nome */
+}
+.skill-logo:hover {
+    transform: scale(1.2);
+}
+
+
+.skill-item p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.portfolio {
+    padding-top: 32px;
+    max-width: 1024px;
+    margin: 0 auto; 
+    width: 100%;
+    margin: 32px auto; /* Espaçamento externo da seção */
+    padding: 16px;
+    background-color: rgb(15, 15, 15);
+    color: white;
+    border-radius: 15px;
+    align-items: center;
+}
+
+.portfolio h4 {
+    text-align: center;
+    margin-bottom: 20px; /* Espaço abaixo do título */
+    font-size: 24px; /* Tamanho da fonte do título */
+    font-weight: bold; /* Deixa o título em negrito */
+    color: rrgb(255, 220, 50);
+    padding-bottom: 32px;
+}
+
+.portfolio img {
+    width: 300px;
+}
+
+.portfolio {
+    padding-top: 32px;
+    max-width: 1024px;
+    margin: 0 auto; 
+    width: 100%;
+    margin: 32px auto; /* Espaçamento externo da seção */
+    padding: 32px 16px;
+    background-color: rgb(15, 15, 15);
+    color: white;
+    border-radius: 15px;
+    align-items: center;
+}
+
+.portfolio h4 {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(255, 220, 50);
+    margin-bottom: 20px;
+    padding-bottom: 32px;
+}
+
+.portfolio-item {
+    display: flex;
+    justify-content: center; /* Alinha os itens à esquerda */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    margin-bottom: 32px;
+    gap: 20px; /* Espaçamento entre a imagem e o conteúdo */
+    flex-wrap: wrap; /* Garante que em telas menores os itens se ajustem */
+}
+
+.project-image img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.project-details {
+    text-align: left;
+    max-width: 600px;
+}
+
+.project-details h3 {
+    font-size: 20px;
+    color: rgb(255, 220, 50);
+    margin-bottom: 10px;
+}
+
+.project-details p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.project-buttons a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: rgb(255, 220, 50);
+    color:rgb(15, 15, 15);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.project-buttons a:hover {
+    background-color: rgb(255, 180, 0);
+}
+
+.contato {
+    max-width: 1024px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 32px 16px;
+    background-color: rgb(15, 15, 15);
+    color: white;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.contato h4 {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(255, 220, 50);
+    margin-bottom: 20px;
+}
+
+.contato-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items:center;
+    margin-bottom: 32px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 600px;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: rgb(255, 220, 50);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid rgb(255, 220, 50);
+    border-radius: 5px;
+    background-color: rgb(30, 30, 30);
+    color: white;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: rgb(255, 220, 50);
+}
+
+.btn-enviar {
+    padding: 10px 20px;
+    background-color: rgb(255, 220, 50);
+    color: rgb(15, 15, 15);
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-enviar:hover {
+    background-color: rgb(255, 180, 0);
+}
+
+.contato-info {
+    margin-top: 32px;
+}
+
+.contato-info a {
+    display: block;
+    color: rgb(255, 220, 50);
+    text-decoration: none;
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.contato-info a:hover {
+    color: rgb(255, 180, 0);
+}
+
+
+footer {
+
+    background-color: rgb(15, 15, 15);
+    color: white;
+    padding: 16px 0;
+    text-align: center;
+    border-top: 2px solid rgb(255, 220, 50);
+    padding-top: 15px;
+}
+
+.footer-container {
+    max-width: 1024px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+footer p {
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: rgb(255, 220, 50);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .portfolio-item {
+        flex-direction: column;
+    }
+
+    .btn-contate-me {
+        width: 100%;
+        text-align: center;
+    }
+}
