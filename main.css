@@ -162,12 +162,12 @@ header .container {
 }
 
 .perfil-imagem {
-    width: 200px; /* Tamanho do círculo */
-    height: 200px;
+    width: 270px; /* Tamanho do círculo */
+    height: 270px;
     border-radius: 60%; /* Círculo */
     object-fit: cover; /* Mantém a proporção da imagem */
     object-position: 100% 25%; /* Move o foco para a parte inferior da imagem */
-    border: 2px solid #ccc; /* Borda opcional */
+    border: 3px solid #ccc; /* Borda opcional */
     transform: scaleX(-1); /* Espelha horizontalmente */
 }
 
