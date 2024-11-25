@@ -171,6 +171,22 @@ header .container {
     transform: scaleX(-1); /* Espelha horizontalmente */
 }
 
+/* Estilo para dispositivos móveis */
+@media screen and (max-width: 768px) {
+    .imagem {
+        display: none; /* Esconde a imagem em dispositivos móveis */
+    }
+
+    .perfil-imagem {
+        display: none; /* Esconde a imagem em dispositivos móveis */
+    }
+
+    .apresentacao div {
+        text-align: center; /* Alinha o conteúdo ao centro */
+    }
+}
+
+
 .sobre {
     max-width: 1024px;
     margin: 0 auto; 
@@ -320,10 +336,7 @@ header .container {
 }
 
 .project-image img {
-    width: 300px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
+
 }
 
 .project-details {
@@ -356,6 +369,53 @@ header .container {
 
 .project-buttons a:hover {
     background-color: rgb(255, 180, 0);
+}
+
+/* Estilos do modal */
+.modal {
+    display: none; /* Inicialmente invisível */
+    position: fixed;
+    z-index: 1;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fundo escuro */
+}
+
+/* Estilo para a imagem expandida */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Estilo do botão de fechar */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo para as imagens dos projetos */
+.project-image img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .contato {

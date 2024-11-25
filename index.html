@@ -82,7 +82,7 @@
     <section class="portfolio" id="portfolio">
         <h4>Portfólio</h4>
         <div class="portfolio-item">
-            <div class="project-image">
+            <div class="project-image" onclick="expandImage(this)">
                 <img src="./images/projeto-felipe-motors.png" alt="Imagem do Projeto 1">
             </div>
             <div class="project-details">
@@ -96,7 +96,7 @@
         </div>
     
         <div class="portfolio-item">
-            <div class="project-image">
+            <div class="project-image" onclick="expandImage(this)">
                 <img src="./images/projeto-galeria-de-fotos.png" alt="Imagem do Projeto 2">
             </div>
             <div class="project-details">
@@ -108,13 +108,13 @@
                 </div>
             </div>
         </div>
-
+    
         <div class="portfolio-item">
-            <div class="project-image">
-                <img src="./images/projeto-agenda-de-contatos.png" alt="Imagem do Projeto 2">
+            <div class="project-image" onclick="expandImage(this)">
+                <img src="./images/projeto-agenda-de-contatos.png" alt="Imagem do Projeto 3">
             </div>
             <div class="project-details">
-                <h3>Galeria de Fotos</h3>
+                <h3>Cadastro de Contatos</h3>
                 <p>Este é um projeto simples de cadastro de contatos, onde os usuários podem inserir informações de nome e telefone, e visualizá-las em uma tabela dinâmica na mesma página. Ele é composto por HTML, CSS e JavaScript, e visa fornecer uma maneira fácil e rápida de armazenar e visualizar contatos.</p>
                 <div class="project-buttons">
                     <a href="https://agenda-de-contatos-zeta-gilt.vercel.app/" target="_blank">Acessar Projeto</a>
@@ -122,7 +122,29 @@
                 </div>
             </div>
         </div>
+    
+        <!-- Modal para expandir a imagem -->
+        <div id="imageModal" class="modal" onclick="closeModal()">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="expandedImg">
+        </div>
     </section>
+    
+    <script>
+        // Função para expandir a imagem
+        function expandImage(img) {
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("expandedImg");
+            modal.style.display = "block";  // Exibe o modal
+            modalImg.src = img.querySelector("img").src;  // Define a imagem expandida
+        }
+
+        // Função para fechar o modal
+        function closeModal() {
+            var modal = document.getElementById("imageModal");
+            modal.style.display = "none";  // Fecha o modal
+        }
+    </script>
 
     <section class="contato" id="contato">
         <h4>Contato</h4>
